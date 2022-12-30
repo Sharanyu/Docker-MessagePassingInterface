@@ -46,11 +46,11 @@ Explanation: Command to enter inside the docker container. “ls -lrt is used to
 
 Explanation: Explanation: apt-get update retrieves package lists from the repositories and "updates" them with information on the most recent versions of packages and their dependencies.
 
-apt-get install nano net-tools iputils-ping openssh-client openssh-server
+`apt-get install nano net-tools iputils-ping openssh-client openssh-server`
 
 Explanation: command to install network tools.
 
-pip install pandas==1.5.
+`pip install pandas==1.5.`
 
 Explanation : Command to install pandas package in ubuntu
 
@@ -162,13 +162,13 @@ Explanation: Command to display the network configurations and ip addresses.
 Below are the scripts to demonstrate the working of MPI using docker containers.
 
 mpiexec -n 4 -machinefile ~/machinefile python -m
-mpi4py Q1T3.py
+mpi4py usecase1_mostcancelledflights.py
 
 mpiexec -n 4 -machinefile ~/machinefile python -m
-mpi4py Q2T3.py
+mpi4py usecase2_mostdivertedflights.py
 
 mpiexec -n 4 -machinefile ~/machinefile python -m
-mpi4py Q3T3.py
+mpi4py usecase3_avgtimebetweenNA&CHG.py
 
 mpiexec -n 4 -machinefile ~/machinefile python -m
-mpi4py Q4T3.py
+mpi4py usecase4_datesmising.py
