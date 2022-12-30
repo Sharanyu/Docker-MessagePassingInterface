@@ -1,2 +1,4 @@
-# Docker-ParallelProgramming
-Implementation of parallel programming techniques in Python with Docker.
+# Docker-MPI
+Implementation of MPI in Python with Docker.
+
+
