@@ -1,0 +1,71 @@
+docker pull husseinabdallah2/mpi4py-cluster:master
+
+docker images
+
+docker run --mount type=bind,source=D:\DOCKERA3T2,target=/A3files --name masternode -it facd914d2eb6 /bin/bash
+docker run --mount type=bind,source=D:\DOCKERA3T2,target=/A3files --name workernode1 -it facd914d2eb6 /bin/bash
+docker run --mount type=bind,source=D:\DOCKERA3T2,target=/A3files --name workernode2 -it facd914d2eb6 /bin/bash
+docker run --mount type=bind,source=D:\DOCKERA3T2,target=/A3files --name workernode3 -it facd914d2eb6 /bin/bash
+
+docker start 70b3968e54ee6920f59c34097409581eecd336ae6321a341bcbbb085ff38b5bb 32beb28f308c0e94db4eaf5a655e094d55e337f744149e8f1d54679aca28aac9 0552972d18ab287e87aced3b4e742dc24c38634d088fee18fc5fb608c99c1f02 f1b11ac2bcb411a89ed9ee8b5f432682a32d97f0fdbd7ff108df40ab152abcb6
+
+docker exec -it 70b3968e54ee6920f59c34097409581eecd336ae6321a341bcbbb085ff38b5bb /bin/bash
+ls -lrt
+
+apt-get update
+apt-get install nano net-tools iputils-ping openssh-client openssh-server
+pip install pandas==1.5.0
+nano ~/machinefile
+passwd
+service ssh start
+
+docker exec -it 32beb28f308c0e94db4eaf5a655e094d55e337f744149e8f1d54679aca28aac9 /bin/bash
+ls -lrt
+
+apt-get update
+apt-get install nano net-tools iputils-ping openssh-client openssh-server
+pip install pandas==1.5.0
+nano ~/machinefile
+passwd
+service ssh start
+
+docker exec -it 0552972d18ab287e87aced3b4e742dc24c38634d088fee18fc5fb608c99c1f02 /bin/bash
+ls -lrt
+
+apt-get update
+apt-get install nano net-tools iputils-ping openssh-client openssh-server
+pip install pandas==1.5.0
+nano ~/machinefile
+passwd
+service ssh start
+
+docker exec -it f1b11ac2bcb411a89ed9ee8b5f432682a32d97f0fdbd7ff108df40ab152abcb6 /bin/bash
+ls -lrt
+
+apt-get update
+apt-get install nano net-tools iputils-ping openssh-client openssh-server
+pip install pandas==1.5.0
+nano ~/machinefile
+passwd
+service ssh start
+
+_  In master node _ 
+
+nano /etc/ssh/sshd_config
+ssh root@172.17.0.7
+ssh root@172.17.0.8
+ssh root@172.17.0.9
+
+ssh-keygen -t rsa
+ssh-copy-id -i sshkeyfile.pub root@172.17.0.7
+ssh-copy-id -i sshkeyfile.pub root@172.17.0.8
+ssh-copy-id -i sshkeyfile.pub root@172.17.0.9
+
+ssh-copy-id -i root@172.17.0.7
+ssh-copy-id -i root@172.17.0.8
+ssh-copy-id -i root@172.17.0.9
+
+mpiexec -n 4 -machinefile ~/machinefile python -m mpi4py Q1T3.py
+mpiexec -n 4 -machinefile ~/machinefile python -m mpi4py Q2T3.py
+mpiexec -n 4 -machinefile ~/machinefile python -m mpi4py Q3T3.py
+mpiexec -n 4 -machinefile ~/machinefile python -m mpi4py Q4T3.py
