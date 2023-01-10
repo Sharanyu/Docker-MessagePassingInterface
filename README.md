@@ -70,73 +70,70 @@ Explanation: command to install network tools.
 
 Explanation : Command to install pandas package in ubuntu
 
-nano ~/machinefile
+`nano ~/machinefile`
 
 ![Picture9](https://user-images.githubusercontent.com/41756221/211597878-53585012-794a-437c-8af2-f7989042e110.png)
 
 Explanation: Command to set the IP addresses(hosts).
 
-passwd
+`passwd`
 
 ![Picture10](https://user-images.githubusercontent.com/41756221/211597956-843b5306-12ba-46b7-95c5-516b56e7499b.png)
 
 Explanation: Command to set the password to the container.
 
-service ssh start
+`service ssh start`
 
 ![Picture11](https://user-images.githubusercontent.com/41756221/211598128-a1da2d14-5a83-47fb-821b-f8c0f79dd3fc.jpg)
 
 Explanation : command to start and check the ssh service.
 
-docker exec -it 32beb28f308c0e94db4eaf5a655e094d55e337f744149e8f1d79aca28aac9 /bin/bash
+`docker exec -it 32beb28f308c0e94db4eaf5a655e094d55e337f744149e8f1d79aca28aac9 /bin/bash`
 
 ![Picture12](https://user-images.githubusercontent.com/41756221/211598201-98355a77-3485-409b-abb3-d80c2f0c05ef.jpg)
 
 Explanation: Command to enter inside the container.
 
-apt-get update
+`apt-get update`
 
 ![Picture13](https://user-images.githubusercontent.com/41756221/211598232-5e1f150e-6788-4319-bf77-165fb3be6d3e.png)
 
 Explanation: apt-get update retrieves package lists from the repositories and "updates" them with information on the most recent versions of packages
-
 and their dependencies.
 
-apt-get install nano net-tools iputils-ping openssh-client openssh-server
+`apt-get install nano net-tools iputils-ping openssh-client openssh-server`
 
 ![Picture14](https://user-images.githubusercontent.com/41756221/211598271-3f355ab6-c637-4e32-b76a-4bb078db387d.png)
 
 Explanation: command to install network tools.
 
-pip install pandas==1.5.
+`pip install pandas==1.5.`
 
 ![Picture15](https://user-images.githubusercontent.com/41756221/211598303-a0143666-9744-45fe-8353-2069d89b934c.jpg)
 
 Explanation: Command to install the pandas package.
 
-nano ~/machinefile
+`nano ~/machinefile`
 
 ![Picture16](https://user-images.githubusercontent.com/41756221/211598327-e3e6d2d5-2d63-48e4-bcb0-c7b666ac8580.png)
 
 Explanation: Command to set the IP addresses(hosts).
 
-Passwd
+`Passwd`
 
 ![Picture17](https://user-images.githubusercontent.com/41756221/211598355-b5919523-855a-47df-bd88-08e1c5d0ef24.png)
 
 Explanation: Command to set the password to the container.
 
-service ssh start
+`service ssh start`
 
 ![Picture18](https://user-images.githubusercontent.com/41756221/211598387-d82395fd-91b8-48a0-b311-eaa280c66648.jpg)
 
 Explanation: command to start and check the ssh service.
-
 Till now we have configured the containers master and worker1.
-
 Repeat the above steps for the other 2 containers as well. (worker2 and worker3)
 
-nano /etc/ssh/sshd_config
+`nano /etc/ssh/sshd_config`
 
 ![Picture20](https://user-images.githubusercontent.com/41756221/211598665-dd9ed0c4-d353-4203-9e91-3301355ded87.jpg)
 
@@ -144,7 +141,7 @@ Explanation: command to exit the ssh config file.
 
 Check for “PermitRootLogin yes“
 
-ssh root@172.17.0.7
+`ssh root@172.17.0.7`
 
 ![Picture21](https://user-images.githubusercontent.com/41756221/211598855-556372d6-d26c-48ca-b898-5a44fb19197e.png)
 
@@ -152,13 +149,13 @@ Explanation: command to check the connectivity between the master
 
 container and worker1 container
 
-ssh root@172.17.0.8
+`ssh root@172.17.0.8`
 
 ![Picture22](https://user-images.githubusercontent.com/41756221/211598917-164c3306-d6a6-42da-b063-4e2ab7a96830.png)
 
 Explanation: command to check the connectivity between the master container and worker2 container
 
-ssh root@172.17.0.9
+`ssh root@172.17.0.9`
 
 ![Picture23](https://user-images.githubusercontent.com/41756221/211599006-d8c4e17e-099c-4fa3-bcb5-2831b57f6dcc.png)
 
@@ -166,56 +163,56 @@ Explanation: command to check the connectivity between the master
 
 container and worker3 container
 
-ssh-keygen -t rsa
+`ssh-keygen -t rsa`
 
 ![Picture24](https://user-images.githubusercontent.com/41756221/211599038-d79af957-de92-4c2f-9c6d-512a8b975b1d.png)
 
 Explanation: command to create a ssh key in the master node.
 
-ls -lrt
+`ls -lrt`
 
 ![Picture25](https://user-images.githubusercontent.com/41756221/211599065-36587ee5-58c4-48f7-80ab-3be18516b8b9.png)
 
 Explanation: command to list the files and directories in the master container
 and check if the ssh key is generated.
 
-ssh-copy-id -i sshkeyfile.pub root@172.17.0.7
+`ssh-copy-id -i sshkeyfile.pub root@172.17.0.7`
 
 ![Picture26](https://user-images.githubusercontent.com/41756221/211599187-9d01d068-aaaa-474c-84b8-447b4b8606d4.png)
 
 Explanation: command to copy the generated ssh key to worker1.
 
-ssh-copy-id -i sshkeyfile.pub root@172.17.0.8
+`ssh-copy-id -i sshkeyfile.pub root@172.17.0.8`
 
 ![Picture27](https://user-images.githubusercontent.com/41756221/211599218-6c0828d6-5bdd-4e5b-b6c1-229a47f47ac3.jpg)
 
 Explanation: command to copy the generated ssh key to worker2.
 
-ssh-copy-id -i sshkeyfile.pub root@172.17.0.9
+`ssh-copy-id -i sshkeyfile.pub root@172.17.0.9`
 
 ![Picture28](https://user-images.githubusercontent.com/41756221/211599248-58f0b89e-ab28-4823-9385-9525ca68ed81.jpg)
 
 Explanation: command to copy the generated ssh key to worker3.
 
-ssh-copy-id -i root@172.17.0.7
+`ssh-copy-id -i root@172.17.0.7`
 
 ![Picture29](https://user-images.githubusercontent.com/41756221/211599319-110059b3-5fbe-4f61-94b8-a26a4faa7c47.jpg)
 
 Explanation: command to copy the ssh key and enable the passwordless ssh from master to worker1.
 
-ssh-copy-id -i root@172.17.0.8
+`ssh-copy-id -i root@172.17.0.8`
 
 ![Picture30](https://user-images.githubusercontent.com/41756221/211599344-9928e17f-2aaf-4dfe-87c6-ccebf2847357.jpg)
 
 Explanation: command to copy the ssh key and enable the passwordless ssh from master to worker2.
 
-ssh-copy-id -i root@172.17.0.9
+`ssh-copy-id -i root@172.17.0.9`
 
 ![Picture31](https://user-images.githubusercontent.com/41756221/211599393-e5aa652b-ec87-4b8b-8f33-745357a24030.jpg)
 
 Explanation: command to copy the ssh key and enable the passwordless ssh from master to worker3.
 
-docker network inspect bridge
+`docker network inspect bridge`
 
 ![Picture32](https://user-images.githubusercontent.com/41756221/211599434-6843ea37-d565-43ca-a958-3ea9fa4fc559.png)
 
@@ -223,16 +220,12 @@ Explanation: Command to display the network configurations and ip addresses.
 
 Below are the scripts to demonstrate the working of MPI using docker containers.
 
-mpiexec -n 4 -machinefile ~/machinefile python -m
-mpi4py usecase1_mostcancelledflights.py
+`mpiexec -n 4 -machinefile ~/machinefile python -m mpi4py usecase1_mostcancelledflights.py`
 
-mpiexec -n 4 -machinefile ~/machinefile python -m
-mpi4py usecase2_mostdivertedflights.py
+`mpiexec -n 4 -machinefile ~/machinefile python -m mpi4py usecase2_mostdivertedflights.py`
 
-mpiexec -n 4 -machinefile ~/machinefile python -m
-mpi4py usecase3_avgtimebetweenNA&CHG.py
+`mpiexec -n 4 -machinefile ~/machinefile python -m mpi4py usecase3_avgtimebetweenNA&CHG.py`
 
-mpiexec -n 4 -machinefile ~/machinefile python -m
-mpi4py usecase4_datesmising.py
+`mpiexec -n 4 -machinefile ~/machinefile python -m mpi4py usecase4_datesmising.py`
 
 ![Picture33](https://user-images.githubusercontent.com/41756221/211599583-f47de0b6-153b-48aa-a9d6-0aeee655879d.png)
