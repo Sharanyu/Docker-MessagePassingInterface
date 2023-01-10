@@ -229,3 +229,20 @@ Below are the scripts to demonstrate the working of MPI using docker containers.
 `mpiexec -n 4 -machinefile ~/machinefile python -m mpi4py usecase4_datesmising.py`
 
 ![Picture33](https://user-images.githubusercontent.com/41756221/211599583-f47de0b6-153b-48aa-a9d6-0aeee655879d.png)
+
+
+We then analyze the perfromance of the MPI python scripts by varying the container counts.
+
+<img width="590" alt="Screenshot 2023-01-10 at 11 04 29 AM" src="https://user-images.githubusercontent.com/41756221/211601715-890b80b5-e6ed-4d35-9906-a0875285a5b2.png">
+
+Plotting the results produces the below graph
+
+<img width="608" alt="Screenshot 2023-01-10 at 11 05 43 AM" src="https://user-images.githubusercontent.com/41756221/211601920-8001698a-e2b4-437f-8221-f4a74249820f.png">
+
+Finally the Stats
+
+<img width="630" alt="Screenshot 2023-01-10 at 11 06 46 AM" src="https://user-images.githubusercontent.com/41756221/211602117-384a93ec-9175-4d88-b8f2-f9ca3555ea77.png">
+
+Analysis and Observation:
+
+After executing the MPI queries(Q1,Q2,Q3,Q4), we can observe a pattern where the time is reducing as we increase the number of workers (containers here). We can witness the work being distributed as we increase the worker hence the speed improvement.
