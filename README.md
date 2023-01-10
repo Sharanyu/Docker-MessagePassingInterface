@@ -1,5 +1,7 @@
 # Docker-MPI
-Flights data Analysis using MPI.
+Flights data Analysis using MPI and Docker.
+
+![python-logo-master-v3-TM-flattened](https://user-images.githubusercontent.com/41756221/211604614-ea8375f0-2bdc-47e3-a76b-343469286df5.png) ![logo](https://user-images.githubusercontent.com/41756221/211604705-e2b8d6cf-f074-445b-a3d0-18f129ef2509.png)
 
 ### Setting up the environment
 
